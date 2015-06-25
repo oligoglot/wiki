@@ -1,0 +1,1 @@
+Old code that I wrote to upload over a hundred thousand technical glossary terms from Tamil Virtual Academy into Tamil Wiktionary. A. Ravishankar helped with the requirements as well as in running the bot. More details (in Tamil): https://ta.wikipedia.org/s/b1r
