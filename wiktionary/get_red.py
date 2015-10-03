@@ -1,4 +1,5 @@
 import lxml.html
+from lxml import etree
 import urllib
 import codecs
 # make HTTP request to site
@@ -9,4 +10,8 @@ doc = lxml.html.document_fromstring(page.read().decode('utf-8'))
 links = doc.xpath("//a[contains(@class,'new')]")
 with codecs.open("op.txt", "w", "utf-8-sig") as op:
 	for link in links:
-		op.write(lxml.html.tostring(link, method="text", encoding=unicode) + '\n')
+		tilde = etree.Element("p")
+		tilde.text = "~"
+		link.insert(1, tilde)
+		t = lxml.html.tostring(link, method="text", encoding=unicode).replace("~ ", "~", 1) + '\n'
+		op.write(t)
